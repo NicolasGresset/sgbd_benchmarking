@@ -5,3 +5,34 @@ services:
       - "8888:8888"
     volumes:
       - ./notebooks:/app
+    networks:
+      - api_net
+
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: tprli
+      POSTGRES_DB: postgresDB
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - api_net 
+
+  couchbase:
+    image: couchbase
+    environment:
+      - COUCHBASE_ADMIN_USERNAME=admin
+      - COUCHBASE_ADMIN_PASSWORD=tprli
+    volumes:
+      - couchbase_data:/opt/couchbase/var
+    networks:
+      - api_net
+
+volumes:
+  pgdata:
+  couchbase_data:
+
+networks:
+  api_net:
+    driver: bridge
