@@ -14,10 +14,41 @@ Execute it
 
 Access your browser on [http://localhost:8888](http://localhost:8888) and select the notebook.
 
-# Choix
+# Choices
 
-On choisit la base de données [Couchbase](https://www.couchbase.com/) pour en étudier les performances sur les commandes CRUD (Create Read Update Delete) par rapport à une base de données relationnelle classique. Couchbase est une base de données NoSQL hybride combinant les modèles key-value et document-orienté. Elle est conçue pour offrir des performances élevées, une faible latence et une scalabilité horizontale, ce qui la rend idéale pour des applications en temps réel comme les analyses, les jeux vidéo et les systèmes de cache.
+## SGBD
 
+We choose the [Couchbase](https://www.couchbase.com/) database to study its performance on CRUD (Create Read Update Delete) operations compared to a traditional relational database. Couchbase is a hybrid NoSQL database that combines key-value and document-oriented models. It is designed to provide high performance, low latency, and horizontal scalability, making it ideal for real-time applications such as analytics, video games, and caching systems.
 
-La SBDG relationnelle choisie qui servira de comparaison est [PostgreSQL](https://www.postgresql.org/). Nous avons choisi PostgreSQL car c'est un système de base de données relationnelles très populaire.
+The relational database chosen for comparison is [PostgreSQL](https://www.postgresql.org/). We selected PostgreSQL because it is a very popular relational database system.
+
+## Dataset
+
+### Description
+
+We choose a dataset provided by the city of Strasbourg in France. It is composed of a description of the trees located in Strasbourg and followed by the municipality.
+
+The following parameters are provided : 
+
+```csv
+Geo Point;Geo Shape;num_arbre;genre;si_essence;si_hauteur;si_diametre_fut;si_largeur_couronne
+48.514687288, 7.7194018129;"{""coordinates"": [7.7194018129, 48.514687288], ""type"": ""Point""}";115011;Carpinus;Carpinus betulus 'Fastigiata';7;15;6
+48.5715810072, 7.7871982065;"{""coordinates"": [7.7871982065, 48.5715810072], ""type"": ""Point""}";116474;Prunus;Prunus avium Plena;5;6;2
+```
+
+There are 81511 entries in the database, for a total of 12 Mbytes.
+
+### Retrieve the dataset
+
+Make the script executable :
+
+```bash
+chmod +x retrieve_dataset.sh
+```
+
+Run it
+
+```bash
+./retrieve_dataset.sh
+```
 
