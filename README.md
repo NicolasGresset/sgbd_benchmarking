@@ -40,15 +40,7 @@ There are 81511 entries in the database, for a total of 12 Mbytes.
 
 ### Retrieve the dataset
 
-Make the script executable :
+The dataset is automatically downloaded the first time you run the script `run.sh` and is then put at the location : 
+`data/trees_strasbourg.csv`
 
-```bash
-chmod +x retrieve_dataset.sh
-```
-
-Run it
-
-```bash
-./retrieve_dataset.sh
-```
 
