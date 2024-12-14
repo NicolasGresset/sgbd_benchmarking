@@ -5,6 +5,7 @@ services:
       - "8888:8888"
     volumes:
       - ./notebooks:/app
+      - ./data:/home
     networks:
       - api_net
 
@@ -24,6 +25,15 @@ services:
     environment:
       - COUCHBASE_ADMIN_USERNAME=admin
       - COUCHBASE_ADMIN_PASSWORD=tprli
+      - COUCHBASE_NODE_NAME=couchbase
+      - COUCHBASE_CLUSTER_NAME=couchbase-cluster
+      - COUCHBASE_BUCKET=tree
+      - COUCHBASE_RBAC_USERNAME=admin 
+      - COUCHBASE_RBAC_PASSWORD=tprlii
+      - COUCHBASE_RBAC_NAME='admin' 
+      - COUCHBASE_RBAC_ROLES=Admin 
+    ports:
+      - 8091:8091
     volumes:
       - couchbase_data:/opt/couchbase/var
     networks:
