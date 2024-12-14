@@ -1,3 +1,6 @@
 jupyter
 psycopg2-binary
 couchbase
+pandas
+time
+gc
