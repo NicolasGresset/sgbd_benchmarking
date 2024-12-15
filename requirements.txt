@@ -1,6 +1,4 @@
 jupyter
 psycopg2-binary
-couchbase
+cassandra-driver
 pandas
-time
-gc

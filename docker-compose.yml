@@ -20,28 +20,21 @@ services:
     networks:
       - api_net 
 
-  couchbase:
-    image: couchbase
-    environment:
-      - COUCHBASE_ADMIN_USERNAME=admin
-      - COUCHBASE_ADMIN_PASSWORD=tprli
-      - COUCHBASE_NODE_NAME=couchbase
-      - COUCHBASE_CLUSTER_NAME=couchbase-cluster
-      - COUCHBASE_BUCKET=tree
-      - COUCHBASE_RBAC_USERNAME=admin 
-      - COUCHBASE_RBAC_PASSWORD=tprlii
-      - COUCHBASE_RBAC_NAME='admin' 
-      - COUCHBASE_RBAC_ROLES=Admin 
+  cassandra:
+    image: cassandra:latest
     ports:
-      - 8091:8091
+      - "9042:9042"
+    environment:
+      - CASSANDRA_USER=admin
+      - CASSANDRA_PASSWORD=tprli
     volumes:
-      - couchbase_data:/opt/couchbase/var
+      - cassandradata:/var/lib/cassandra
     networks:
       - api_net
 
 volumes:
   pgdata:
-  couchbase_data:
+  cassandradata:
 
 networks:
   api_net:
