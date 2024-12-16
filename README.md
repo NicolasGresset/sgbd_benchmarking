@@ -24,8 +24,6 @@ The relational database chosen for comparison is [PostgreSQL](https://www.postgr
 
 ## Dataset
 
-### Description
-
 We chose a dataset entirely generated with random values to study the effectivness of each SGBD system. The following columns are present : 
 
 The following parameters are provided : 
@@ -47,4 +45,6 @@ There are 100.001 entries in the database, for a total of 7.7 Mbytes.
 
 Some columns (e.g BITCOIN_ADDRESS) are completely random and will be used as primary key by the SQL database. Others (e.g DATABASE_COLUMN_TYPE or COUNTRy_CODE) are random values from a limited subset of possible entries and we will use them to study the benefits of indexation.
 
+## Explanations
 
+More explanations about the way we measure accurately the time or the kind of queries we perform are given in the notebook itself.
