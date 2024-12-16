@@ -1,4 +1,4 @@
-jupyter
-psycopg2-binary
-cassandra-driver
-pandas
+jupyter==1.1.1
+psycopg2-binary==2.9.10
+cassandra-driver==3.29.2
+matplotlib==3.10.0
