@@ -20,7 +20,8 @@ Access your browser on [http://localhost:8888](http://localhost:8888) and select
 
 ## SGBD
 
-We chose the [Cassandra](https://cassandra.apache.org/_/index.html) database to study its performance on CRUD (Create Read Update Delete) operations compared to a traditional relational database. Cassandra is a highly scalable, distributed NoSQL database designed to handle large amounts of data across many servers, ensuring high availability with no single point of failure. It uses a masterless, peer-to-peer architecture, allowing data to be replicated across multiple nodes for fault tolerance. It is mainly focused on write operations, so it is something we want to verify with the benchmark.
+We chose the [Cassandra](https://cassandra.apache.org/_/index.html) database to study its performance on CRUD (Create Read Update Delete) operations compared to a traditional relational database. Cassandra is a highly scalable, distributed NoSQL database designed to handle large amounts of data across many servers, ensuring high availability with no single point of failure. It uses a masterless, peer-to-peer architecture, allowing data to be replicated across multiple nodes for fault tolerance. It is mainly focused on read/write operations, so it is something we want to verify with the benchmark.
+However, Cassandra is considered to be difficult to master and will not suit applications with ACID compliance (CAP theorem restriction).
 
 The relational database chosen for comparison is [PostgreSQL](https://www.postgresql.org/). We selected PostgreSQL because it is a very popular relational database system.
 
