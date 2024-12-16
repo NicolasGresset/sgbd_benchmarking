@@ -27,6 +27,8 @@ services:
     environment:
       - CASSANDRA_USER=admin
       - CASSANDRA_PASSWORD=tprli
+      - HEAP_NEWSIZE=128M
+      - MAX_HEAP_SIZE=1536M
     volumes:
       - cassandra_data:/var/lib/cassandra
     networks:
@@ -45,6 +47,8 @@ services:
       - CASSANDRA_BROADCAST_ADDRESS=cassandra-replicat-0
       - CASSANDRA_BROADCAST_RPC_ADDRESS=cassandra-replicat-0
       - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
+      - HEAP_NEWSIZE=128M
+      - MAX_HEAP_SIZE=1536M
     volumes:
       - cassandra_data_0:/var/lib/cassandra
     networks:
@@ -63,6 +67,8 @@ services:
       - CASSANDRA_BROADCAST_ADDRESS=cassandra-replicat-1
       - CASSANDRA_BROADCAST_RPC_ADDRESS=cassandra-replicat-1
       - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
+      - HEAP_NEWSIZE=128M
+      - MAX_HEAP_SIZE=1536M
     volumes:
       - cassandra_data_1:/var/lib/cassandra
     networks:
@@ -81,6 +87,8 @@ services:
       - CASSANDRA_BROADCAST_ADDRESS=cassandra-replicat-2
       - CASSANDRA_BROADCAST_RPC_ADDRESS=cassandra-replicat-2
       - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
+      - HEAP_NEWSIZE=128M
+      - MAX_HEAP_SIZE=1536M
     volumes:
       - cassandra_data_2:/var/lib/cassandra
     networks:
